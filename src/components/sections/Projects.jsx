@@ -20,8 +20,9 @@ const projects = [
     subtitle: "Creative Agency Landing Page",
     desc: "A modern, high-performance agency landing page template built to sell. Features GSAP stair transitions, Framer Motion layoutId modals, custom cursor, smooth scroll, and a working Google Sheets contact form.",
     video:
-      // "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
-      "https://res.cloudinary.com/md0sncix/video/upload/v1785493113/Lv_0_20260730161935.Mp4_2_mjym7z.mp4",
+      "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785745159/Lv_0_20260730161935.Mp4_2_2_wf6nvw.mp4",
+    videoThumbnail:
+      "https://res.cloudinary.com/md0sncix/image/upload/w_1200,q_auto,f_auto/v1785747382/Screenshot_2026-08-03_131529_a8zhkm.png",
     tags: ["React", "GSAP", "Framer Motion", "Tailwind", "Lenis"],
     color: "#8B5CF6",
     glow: "rgba(139,92,246,0.1)",
@@ -37,8 +38,10 @@ const projects = [
     subtitle: "Creative Agency Portfolio",
     desc: "A visually rich portfolio site for a creative agency featuring GSAP ScrollTrigger animations, Lenis smooth scroll, Swiper carousels, ImageKit CDN, and performance optimizations including React Compiler.",
     video:
-      // "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80",
       "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785492662/Lv_0_20260730184745.Mp4_2_1_c9gps1.mp4",
+    videoThumbnail:
+      "https://res.cloudinary.com/md0sncix/image/upload/w_1200,q_auto,f_auto/v1785747526/Screenshot_2026-08-03_132200_ymo6fp.png",
+
     tags: ["React", "GSAP", "ScrollTrigger", "Lenis", "Swiper", "ImageKit"],
     color: "#22C55E",
     glow: "rgba(34,197,94,0.1)",
@@ -63,184 +66,6 @@ const projects = [
   //   align: "left",
   // },
 ];
-
-// function ProjectCard({ project, index }) {
-//   const isRight = project.align === "right";
-
-//   return (
-//     <motion.div
-//       variants={fadeUp}
-//       initial="hidden"
-//       whileInView="show"
-//       viewport={{ once: true }}
-//       custom={index}
-//       className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
-//     >
-//       {/* Image — order changes based on align */}
-//       <div className={`relative group ${isRight ? "lg:order-2" : ""}`}>
-//         <div className="relative rounded-2xl overflow-hidden border border-white/8 aspect-video">
-//           <img
-//             src={project.image}
-//             alt={project.title}
-//             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-//           />
-//           {/* Overlay on hover */}
-//           <div
-//             className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4"
-//             style={{ background: `${project.glow}` }}
-//           >
-//             {project.live !== "#" && (
-//               <a
-//                 href={project.live}
-//                 target="_blank"
-//                 rel="noreferrer"
-//                 className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-//               >
-//                 <FaExternalLinkAlt size={14} />
-//               </a>
-//             )}
-//             {project.github !== "#" && (
-//               <a
-//                 href={project.github}
-//                 target="_blank"
-//                 rel="noreferrer"
-//                 className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-//               >
-//                 <FaGithub size={16} />
-//               </a>
-//             )}
-//           </div>
-//         </div>
-
-//         {/* Project number — large, behind card */}
-//         <span
-//           className="absolute -top-8 -left-4 font-display text-[100px] leading-none select-none pointer-events-none opacity-[0.04]"
-//           style={{ color: project.color }}
-//         >
-//           {project.num}
-//         </span>
-//       </div>
-
-//       {/* Content */}
-//       <div className={isRight ? "lg:order-1" : ""}>
-//         {/* Number + title */}
-//         <div className="flex items-center gap-3 mb-4">
-//           <span
-//             className="text-[11px] font-mono tracking-[0.2em]"
-//             style={{ color: project.color }}
-//           >
-//             {project.num}
-//           </span>
-//           <div className="w-8 h-px bg-zinc-800" />
-//           <span className="text-[11px] font-mono tracking-[0.2em] text-zinc-600 uppercase">
-//             {project.subtitle}
-//           </span>
-//         </div>
-
-//         <h3 className="font-display text-[clamp(32px,4vw,56px)] text-white leading-[1.1] mb-5">
-//           {project.title}
-//         </h3>
-
-//         <p className="text-zinc-400 text-base leading-[1.8] mb-8">
-//           {project.desc}
-//         </p>
-
-//         {/* Tags */}
-//         <div className="flex flex-wrap gap-2 mb-8">
-//           {project.tags.map((tag) => (
-//             <span
-//               key={tag}
-//               className="text-[11px] font-mono tracking-wide px-3 py-1.5 rounded-full border border-white/8 text-zinc-500"
-//             >
-//               {tag}
-//             </span>
-//           ))}
-//         </div>
-
-//         {/* Buttons */}
-//         <div className="flex items-center gap-4">
-//           {project.live !== "#" && (
-//             <a
-//               href={project.live}
-//               target="_blank"
-//               rel="noreferrer"
-//               data-cursor="pointer"
-//               className="inline-flex items-center gap-2 text-sm font-semibold px-6 py-3 rounded-xl border transition-all duration-300"
-//               style={{
-//                 borderColor: `${project.color}40`,
-//                 color: project.color,
-//               }}
-//               onMouseEnter={(e) => {
-//                 e.currentTarget.style.background = `${project.color}15`;
-//                 e.currentTarget.style.borderColor = `${project.color}80`;
-//               }}
-//               onMouseLeave={(e) => {
-//                 e.currentTarget.style.background = "transparent";
-//                 e.currentTarget.style.borderColor = `${project.color}40`;
-//               }}
-//             >
-//               Live Demo <FaExternalLinkAlt size={11} />
-//             </a>
-//           )}
-//           {project.github !== "#" && (
-//             <a
-//               href={project.github}
-//               target="_blank"
-//               rel="noreferrer"
-//               data-cursor="pointer"
-//               className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-500 hover:text-white transition-colors duration-300"
-//             >
-//               <FaGithub size={16} /> GitHub
-//             </a>
-//           )}
-//         </div>
-//       </div>
-//     </motion.div>
-//   );
-// }
-
-// export default function Projects({ id }) {
-//   return (
-//     <section
-//       id={id}
-//       className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24 bg-[#0A0A0A] overflow-hidden"
-//     >
-//       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
-
-//       <div className="max-w-[1400px] mx-auto">
-//         {/* Header */}
-//         <div className="mb-20">
-//           <motion.div
-//             variants={fadeUp}
-//             initial="hidden"
-//             whileInView="show"
-//             viewport={{ once: true }}
-//             custom={0}
-//           >
-//             <SectionLabel number="03" title="Work" color="text-violet-500" />
-//           </motion.div>
-//           <motion.h2
-//             variants={fadeUp}
-//             initial="hidden"
-//             whileInView="show"
-//             viewport={{ once: true }}
-//             custom={1}
-//             className="font-display text-[clamp(36px,5vw,64px)] text-white leading-[1.1]"
-//           >
-//             Selected projects.
-//           </motion.h2>
-//         </div>
-
-//         {/* Project cards */}
-//         <div className="flex flex-col gap-32">
-//           {projects.map((project, i) => (
-//             <ProjectCard key={project.id} project={project} index={i} />
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
 
 function ProjectCard({ project, index }) {
   const isRight = project.align === "right";
@@ -277,17 +102,13 @@ function ProjectCard({ project, index }) {
           data-cursor="pointer"
           className="relative rounded-2xl overflow-hidden border border-white/8 aspect-video"
         >
-          {/* <motion.img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          /> */}
-
           <motion.video
             autoPlay
             loop
             muted
             playsInline
+            title={project.title}
+            poster={project.videoThumbnail}
             preload="metadata"
             className="w-full h-full object-contain "
           >

@@ -23,7 +23,7 @@ const socials = [
   {
     label: "LinkedIn",
     handle: "Rayyan",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/rayyan-khan-585655322",
     icon: <FaLinkedin size={24} className="xs-w" />,
     color: "#3B82F6",
   },
@@ -37,7 +37,7 @@ const socials = [
   {
     label: "Instagram",
     handle: "@Rayyan",
-    href: "https://instagram.com/yourusername",
+    href: "https://instagram.com/hellorayyan.dev",
     icon: <FaInstagram size={24} className="xs-w" />,
     color: "#8B5CF6",
   },

@@ -100,23 +100,9 @@ export default function About({ id }) {
               className="relative"
             >
               {/* Frame */}
-              {/* <div className="relative rounded-2xl overflow-hidden border border-white/8 aspect-[4/3] bg-[#111]">
-             
-                <div className="w-full h-full bg-gradient-to-br from-violet-500/10 via-[#111] to-blue-500/10 flex items-center justify-center">
-                  <span className="font-display text-[80px] text-white/10 italic select-none">
-                    R.
-                  </span>
-                </div>
-
-                
-                <div className="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-violet-500/40 rounded-tl-2xl" />
-                <div className="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-violet-500/40 rounded-br-2xl" />
-              </div>   */}
-
-              {/* Frame */}
               <div className="relative rounded-2xl overflow-hidden border border-white/8 aspect-[4/3] bg-[#111]">
                 <img
-                  src="https://ik.imagekit.io/rayyan/rayyan.jpg.jpeg?tr=w-800,q-80,f-auto"
+                  src="https://ik.imagekit.io/rayyan/rayyan.png?tr=w-800,q-80,f-auto"
                   alt="Rayyan"
                   className="w-full h-full object-cover"
                 />
