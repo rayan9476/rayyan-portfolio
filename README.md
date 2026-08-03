@@ -114,6 +114,7 @@ rayyan-portfolio/
 ├── package.json
 ├── package-lock.json
 ├── README.md
+├── screenshot.png
 └── vite.config.js
 ```
 
