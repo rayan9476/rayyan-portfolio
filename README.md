@@ -59,36 +59,62 @@ Featuring a custom cursor, GSAP page loader, ScrollTrigger animations, scramble 
 ## 📁 Project Structure
 
 ```
-src/
-├── lib/
-│   ├── motion.js              ← Framer Motion variants
-│   └── tokens.js              ← Design tokens (colors, spacing)
-├── components/
-│   ├── ui/
-│   │   ├── Button.jsx
-│   │   ├── Card.jsx
-│   │   ├── SectionLabel.jsx
-│   │   └── Tag.jsx
-│   ├── hooks/
-│   │   ├── useScrollTo.js     ← Lenis smooth scroll to section
-│   │   └── useCountUp.js      ← Animated number count-up
-│   ├── layout/
-│   │   ├── Navbar.jsx         ← Fixed nav with active section detection
-│   │   └── Footer.jsx
-│   ├── cursor/
-│   │   └── CustomCursor.jsx   ← GSAP section-aware cursor
-│   ├── loader/
-│   │   └── PageLoader.jsx     ← GSAP letter reveal + split exit
-│   └── sections/
-│       ├── Hero.jsx
-│       ├── About.jsx
-│       ├── Skills.jsx
-│       ├── Projects.jsx
-│       ├── Experience.jsx
-│       └── Contact.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
+rayyan-portfolio/
+├── public/
+│   ├── favicon.ico
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   ├── favicon-48x48.png
+│   ├── favicon-96x96.png
+│   ├── apple-touch-icon.png
+│   ├── android-chrome-192x192.png
+│   ├── android-chrome-512x512.png
+│   ├── icon-256x256.png
+│   ├── icons.svg
+│   ├── site-logo.png
+│   ├── site.webmanifest
+│   ├── sitemap.xml
+│   └── robots.txt
+├── src/
+│   ├── assets/
+│   │   └── HeroSection.png
+│   ├── components/
+│   │   ├── cursor/
+│   │   │   └── CustomCursor.jsx     ← GSAP section-aware cursor
+│   │   ├── hooks/
+│   │   │   ├── useFakeScrollbar.js  ← Custom scrollbar synced to scroll position
+│   │   │   ├── useScrollNavigation.js
+│   │   │   └── useScrollTo.js       ← Lenis smooth scroll to section
+│   │   ├── layout/
+│   │   │   ├── Footer.jsx
+│   │   │   └── Navbar.jsx           ← Fixed nav with active section detection
+│   │   ├── loader/
+│   │   │   └── PageLoader.jsx       ← GSAP letter reveal + split exit
+│   │   ├── sections/
+│   │   │   ├── About.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── Experience.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Projects.jsx
+│   │   │   └── Skills.jsx
+│   │   └── ui/
+│   │       └── SectionLabel.jsx
+│   ├── context/
+│   │   └── AppContext.jsx
+│   ├── lib/
+│   │   └── motion.js                ← Framer Motion variants
+│   ├── pages/
+│   │   └── HomePage.jsx
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
 ```
 
 ---
@@ -146,7 +172,7 @@ npm install -D tailwindcss postcss autoprefixer @vitejs/plugin-react vite
 
 | Role           | Color     | Usage            |
 | -------------- | --------- | ---------------- |
-| Background     | `#0A0A0A` | Main background  |
+| Background     | `#000`    | Main background  |
 | Surface        | `#111111` | Card backgrounds |
 | Text Primary   | `#F5F5F5` | Headings         |
 | Text Secondary | `#A1A1AA` | Body text        |
