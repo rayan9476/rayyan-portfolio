@@ -10,7 +10,7 @@ import {
 import { SiFiverr } from "react-icons/si";
 import { fadeUp } from "../../lib/motion";
 import SectionLabel from "../ui/SectionLabel";
-import { MapPin } from "lucide-react";
+import { Phone } from "lucide-react";
 const socials = [
   {
     label: "GitHub",
@@ -180,138 +180,6 @@ export default function Contact({ id }) {
   };
 
   return (
-    // <section
-    //   id={id}
-    //   className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
-    // >
-    //   {/* Top border */}
-    //   <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/20 to-transparent" />
-
-    //   {/* Background glow */}
-    //   <div
-    //     className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] 2xl:w-[800px] 3xl:w-[1000px] h-[400px] 2xl:h-[500px] 3xl:h-[600px] pointer-events-none"
-    //     style={{
-    //       background:
-    //         "radial-gradient(ellipse, rgba(34,197,94,0.06) 0%, transparent 70%)",
-    //     }}
-    //   />
-
-    //   <div className="max-w-[1400px] 2mxl:max-w-full mx-auto relative z-10">
-    //     <motion.div
-    //       variants={fadeUp}
-    //       initial="hidden"
-    //       whileInView="show"
-    //       viewport={{ once: true }}
-    //       custom={0}
-    //     >
-    //       <SectionLabel number="05" title="Contact" color="text-green-500" />
-    //     </motion.div>
-
-    //     {/* Big heading */}
-    //     <motion.h2
-    //       variants={fadeUp}
-    //       initial="hidden"
-    //       whileInView="show"
-    //       viewport={{ once: true }}
-    //       custom={1}
-    //       className="font-display text-[clamp(40px,7vw,100px)] 2xl:text-[120px] 2mxl:text-[140px] 3sxl:text-[170px] 3xl:text-[200px] text-white leading-[1.05] mb-6 max-w-3xl 2xl:max-w-5xl 3sxl:max-w-[1200px]"
-    //     >
-    //       <ScrambleHeading text="Let's work together." />
-    //     </motion.h2>
-
-    //     {/* Subtext */}
-    //     <motion.p
-    //       variants={fadeUp}
-    //       initial="hidden"
-    //       whileInView="show"
-    //       viewport={{ once: true }}
-    //       custom={2}
-    //       className="text-zinc-400 text-lg 2xl:text-xl 3sxl:text-2xl 3xl:text-3xl max-w-lg 2xl:max-w-xl 3sxl:max-w-[1000px] 3xl:max-w-7xl leading-relaxed mb-12 2xl:mb-16 3xl:mb-20"
-    //     >
-    //       I'm currently available for freelance projects and open to full-time
-    //       opportunities. Have something in mind? Let's talk.
-    //     </motion.p>
-
-    //     {/* Primary CTA — big email */}
-    //     <motion.a
-    //       href="mailto:hellorayyan.dev@gmail.com"
-    //       variants={fadeUp}
-    //       initial="hidden"
-    //       whileInView="show"
-    //       viewport={{ once: true }}
-    //       custom={3}
-    //       data-cursor="pointer"
-    //       className="group inline-flex items-center gap-4 mb-16 2xl:mb-20 3xl:mb-24"
-    //     >
-    //       <span className="font-display text-[clamp(24px,4vw,48px)] 2xl:text-[60px] 2mxl:text-[72px] 3sxl:text-[88px] 3xl:text-[100px] text-white italic group-hover:text-green-400 transition-colors duration-300">
-    //         hello@rayyan.dev
-    //       </span>
-    //       <div className="w-10 h-10 2xl:w-14 2xl:h-14 3sxl:w-16 3sxl:h-16 3xl:w-20 3xl:h-20 rounded-full border border-white/20 flex items-center justify-center text-white group-hover:bg-green-500 group-hover:border-green-500 transition-all duration-300">
-    //         <FaArrowRight
-    //           size={14}
-    //           className="-rotate-45 2xl:w-5 2xl:h-5 3sxl:w-6 3sxl:h-6 3xl:w-7 3xl:h-7"
-    //         />
-    //       </div>
-    //     </motion.a>
-
-    //     {/* Divider */}
-    //     <motion.div
-    //       variants={fadeUp}
-    //       initial="hidden"
-    //       whileInView="show"
-    //       viewport={{ once: true }}
-    //       custom={4}
-    //       className="w-full h-px bg-white/8 mb-12 2xl:mb-16 3xl:mb-20"
-    //     />
-
-    //     {/* Social links */}
-    //     <motion.div
-    //       variants={fadeUp}
-    //       initial="hidden"
-    //       whileInView="show"
-    //       viewport={{ once: true }}
-    //       custom={5}
-    //       className="grid grid-cols-2 md:grid-cols-4 gap-4 2xl:gap-5 3xl:gap-6"
-    //     >
-    //       {socials.map((social, i) => (
-    //         <motion.a
-    //           key={social.label}
-    //           href={social.href}
-    //           target="_blank"
-    //           rel="noreferrer"
-    //           data-cursor="pointer"
-    //           whileHover={{ y: -4 }}
-    //           transition={{ duration: 0.2 }}
-    //           style={{
-    //             // color: exp.color,
-    //             borderColor: `${social.color}30`,
-    //             background: `${social.color}08`,
-    //           }}
-    //           className=" group flex items-center gap-3 2xl:gap-4 3xl:gap-5  border   rounded-xl 2xl:rounded-2xl xs-p2 p-4 2xl:p-5 3xl:p-6  transition-all duration-300"
-    //         >
-    //           <div
-    //             className="  w-9 h-9 2xl:w-11 2xl:h-11 3sxl:w-13 3sxl:h-13 3xl:w-14 3xl:h-14 rounded-lg 2xl:rounded-xl flex items-center justify-center flex-shrink-0 transition-colors duration-300"
-    //             style={{
-    //               background: `${social.color}10`,
-    //               color: social.color,
-    //             }}
-    //           >
-    //             {social.icon}
-    //           </div>
-    //           <div>
-    //             <p className=" text-white xs-s-text text-sm 2xl:text-base 3sxl:text-lg 3xl:text-xl font-medium leading-none mb-1">
-    //               {social.label}
-    //             </p>
-    //             <p className=" text-zinc-600 xs-xxs-text text-xs 2xl:text-sm 3sxl:text-base 3xl:text-lg">
-    //               {social.handle}
-    //             </p>
-    //           </div>
-    //         </motion.a>
-    //       ))}
-    //     </motion.div>
-    //   </div>
-    // </section>
-
     <section
       id={id}
       className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
@@ -373,12 +241,12 @@ export default function Contact({ id }) {
           custom={2.5}
           className="flex items-center gap-2 text-zinc-500 xs-s-text text-[12px] lg:text-xs xl:text-base 2xl:text-lg 3sxl:text-xl 3xl:text-2xl mb-12 2xl:mb-16 3xl:mb-20"
         >
-          <MapPin className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 3sxl:w-8 3sxl:h-8 3xl:w-9 3xl:h-9 text-green-400" />
+          <Phone className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 3sxl:w-8 3sxl:h-8 3xl:w-9 3xl:h-9 text-green-400" />
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=V37J%2BQ42%20Umar%20Colony%2C%20Karachi%2C%20Pakistan"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="tel:+923112336894"
+            // target="_blank"
+            // rel="noopener noreferrer"
             className="underline underline-offset-4 transition-colors duration-300 hover:text-green-500"
           >
             Based in Karachi, Pakistan · Open to remote work
