@@ -20,6 +20,7 @@ export default function App() {
       autoRaf: true,
       lerp: 0.1,
       smoothWheel: true,
+      syncTouch: false,
     });
     window.__lenis = lenis;
     return () => {

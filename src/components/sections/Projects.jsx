@@ -20,7 +20,8 @@ const projects = [
     subtitle: "Creative Agency Landing Page",
     desc: "A modern, high-performance agency landing page template built to sell. Features GSAP stair transitions, Framer Motion layoutId modals, custom cursor, smooth scroll, and a working Google Sheets contact form.",
     video:
-      "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785745159/Lv_0_20260730161935.Mp4_2_2_wf6nvw.mp4",
+      // "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785745159/Lv_0_20260730161935.Mp4_2_2_wf6nvw.mp4",
+      "",
     videoThumbnail:
       "https://res.cloudinary.com/md0sncix/image/upload/w_1200,q_auto,f_auto/v1785747382/Screenshot_2026-08-03_131529_a8zhkm.png",
     tags: ["React", "GSAP", "Framer Motion", "Tailwind", "Lenis"],
@@ -38,7 +39,8 @@ const projects = [
     subtitle: "Creative Agency Portfolio",
     desc: "A visually rich portfolio site for a creative agency featuring GSAP ScrollTrigger animations, Lenis smooth scroll, Swiper carousels, ImageKit CDN, and performance optimizations including React Compiler.",
     video:
-      "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785492662/Lv_0_20260730184745.Mp4_2_1_c9gps1.mp4",
+      // "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785492662/Lv_0_20260730184745.Mp4_2_1_c9gps1.mp4",
+      "",
     videoThumbnail:
       "https://res.cloudinary.com/md0sncix/image/upload/w_1200,q_auto,f_auto/v1785747526/Screenshot_2026-08-03_132200_ymo6fp.png",
 

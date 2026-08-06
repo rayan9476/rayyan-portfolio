@@ -19,9 +19,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scrollbar-width: none;
+}
+
 html,
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   width: 100%;
   height: auto;
   overflow-y: auto;
