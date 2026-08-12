@@ -7,7 +7,7 @@
 **A modern, animated full stack developer portfolio built with React, GSAP, and Framer Motion.**  
 Featuring a custom cursor, GSAP page loader, ScrollTrigger animations, scramble text effects, and smooth scroll — all in one production-grade site.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://your-portfolio.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-0A0A0A?style=for-the-badge&logo=vercel&logoColor=white)](https://hellowrayyandev.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rayan9476/rayyan-portfolio)
 
 ![Portfolio Preview](screenshot.png)
@@ -285,9 +285,9 @@ Add `public/_redirects` for React Router:
 
 **Rayyan** — Full Stack Developer based in Karachi, Pakistan
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-0A0A0A?style=flat-square&logo=vercel&logoColor=white)](https://your-portfolio.vercel.app)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=flat-square&logo=fiverr&logoColor=white)](https://fiverr.com/yourusername)
+[![Portfolio](https://img.shields.io/badge/Portfolio-0A0A0A?style=flat-square&logo=vercel&logoColor=white)](https://hellowrayyandev.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/rayyan-khan-585655322)
+[![Fiverr](https://img.shields.io/badge/Fiverr-1DBF73?style=flat-square&logo=fiverr&logoColor=white)](https://fiverr.com/hellorayyan)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:hellorayyan.dev@gmail.com)
 
 ---

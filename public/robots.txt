@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rayyan.dev/sitemap.xml
+Sitemap: https://hellowrayyandev.vercel.app/sitemap.xml
