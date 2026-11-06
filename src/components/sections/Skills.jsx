@@ -316,7 +316,7 @@ export default function Skills({ id }) {
     <section
       id={id}
       ref={sectionRef}
-      className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
+      className="relative py-24 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
 

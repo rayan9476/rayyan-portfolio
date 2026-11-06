@@ -11,10 +11,11 @@ const stats = [
 ];
 
 export default function About({ id }) {
+  // lg:py-40
   return (
     <section
       id={id}
-      className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
+      className="relative py-24  px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
     >
       {/* Subtle top border line */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/8 to-transparent" />

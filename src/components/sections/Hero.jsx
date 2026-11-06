@@ -364,7 +364,8 @@ export default function Hero({ id, loaded }) {
           className="text-zinc-400 xs-text text-base md:text-lg 2xl:text-xl 3sxl:text-2xl 3xl:text-3xl max-w-md 2xl:max-w-xl 3xl:max-w-4xl leading-relaxed mb-12 2xl:mb-16"
         >
           I build fast, modern web experiences that feel as good as they look.
-          Based in Karachi — working with clients worldwide.
+          Based in Karachi, available for freelance projects and remote roles
+          worldwide.
         </motion.p>
 
         {/* CTA Buttons */}

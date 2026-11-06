@@ -30,7 +30,7 @@ const socials = [
   {
     label: "Fiverr",
     handle: "@Rayyan",
-    href: "https://fiverr.com/yourusername",
+    href: "https://fiverr.com/hellorayyan",
     icon: <SiFiverr size={28} className="xs-w2 xl:w-[34px] xl:h-[34px]" />,
     color: "#22C55E",
   },
@@ -182,7 +182,7 @@ export default function Contact({ id }) {
   return (
     <section
       id={id}
-      className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
+      className="relative py-24 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
     >
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/20 to-transparent" />
@@ -254,187 +254,254 @@ export default function Contact({ id }) {
         </motion.p>
 
         {/* Contact form */}
+
+        {/* Contact form */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="lg:col-span-3"
+          className="mb-16 2xl:mb-20 3xl:mb-24 max-w-4xl 2xl:max-w-5xl 3sxl:max-w-6xl 3xl:max-w-7xl mx-auto"
         >
-          <div className="mb-12 2xl:mb-16 3xl:mb-20 max-w-2xl 2xl:max-w-3xl 3sxl:max-w-4xl 3xl:max-w-7xl mx-auto  rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 md:p-10 shadow-[0_25px_80px_rgba(0,0,0,.45)]">
-            {submitted ? (
-              /* Success state */
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="flex flex-col items-center justify-center text-center py-16 gap-6"
+          {submitted ? (
+            /* Success state */
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="border-t border-white/10 pt-12 pb-6"
+            >
+              <span className="inline-flex items-center gap-2 text-green-400 font-mono text-xs lg:text-sm 2xl:text-lg 3sxl:text-xl 3xl:text-2xl tracking-[0.2em] uppercase mb-6">
+                <span className="w-2 h-2 2xl:w-2.5 2xl:h-2.5  3sxl:w-3 3sxl:h-3 3xl:w-3.5 3xl:h-3.5 rounded-full bg-green-500 animate-pulse" />
+                Message received
+              </span>
+              <h3 className="font-display text-white italic text-[clamp(32px,5vw,64px)] 2xl:text-[80px] 3xl:text-[110px] leading-[1.05] mb-6">
+                Thank you. Talk soon.
+              </h3>
+              <p className="text-zinc-400 max-w-md 3sxl:max-w-xl 3xl:max-w-2xl lg:text-lg 2xl:text-xl 3sxl:text-2xl 3xl:text-3xl leading-7 mb-10">
+                Thanks for reaching out. I'll review your project and get back
+                to you within 24 hours.
+              </p>
+              <button
+                onClick={() => {
+                  setSubmitted(false);
+                  setFormData({
+                    name: "",
+                    email: "",
+                    service: "",
+                    budget: "",
+                    message: "",
+                  });
+                }}
+                className="group inline-flex items-center gap-3 text-green-400 font-mono text-sm lg:text-lg 2xl:text-xl 3sxl:text-2xl 3xl:text-3xl tracking-wide cursor-pointer"
               >
-                <div className="w-20 h-20 3xl:w-24 3xl:h-24 rounded-full bg-[#4CAF4F]/20 border border-[#4CAF4F]/40 flex items-center justify-center text-4xl">
-                  ✓
-                </div>
-                <h3 className="text-white text-2xl 3xl:text-4xl font-bold">
-                  Message Sent!
-                </h3>
-                <p className="text-zinc-400 max-w-sm 3xl:text-lg 3xl:max-w-md leading-7">
-                  Thanks for reaching out. I'll review your project and get back
-                  to you within 24 hours.
-                </p>
-                <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormData({
-                      name: "",
-                      email: "",
-                      service: "",
-                      budget: "",
-                      message: "",
-                    });
-                  }}
-                  className="mt-2 text-[#4CAF4F] border border-[#4CAF4F]/40 hover:bg-[#4CAF4F]/10 px-6 py-3 3xl:text-2xl rounded-xl font-medium transition-all duration-300 cursor-pointer"
-                >
-                  Send Another
-                </button>
-              </motion.div>
-            ) : (
-              <form
-                // ref={formRef}
-                onSubmit={handleSubmit}
-                className="flex flex-col gap-5"
-              >
-                {/* Name + Email row */}
-                <div className="grid sm:grid-cols-2 gap-5">
-                  {[
-                    {
-                      name: "name",
-                      label: "Your Name",
-                      type: "text",
-                      placeholder: "John Doe",
-                    },
-                    {
-                      name: "email",
-                      label: "Your Email",
-                      type: "email",
-                      placeholder: "john@example.com",
-                    },
-                    {
-                      name: "phone",
-                      label: "Phone / WhatsApp",
-                      type: "tel",
-                      placeholder: "+92 300 0000000",
-                      fullWidth: true,
-                    },
-                  ].map((field) => (
-                    <div
-                      key={field.name}
-                      // className="flex flex-col gap-2"
-                      className={`flex flex-col gap-2 ${field.fullWidth ? "sm:col-span-2" : ""}`}
+                <span className="underline underline-offset-4">
+                  Send another
+                </span>
+                <FaArrowRight
+                  size={20}
+                  className="-rotate-45 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 3xl:w-7 3xl:h-7"
+                />
+              </button>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col">
+              {/* Question rows */}
+              {[
+                {
+                  name: "name",
+                  num: "01",
+                  label: "What's your name?",
+                  type: "text",
+                  placeholder: "John Doe",
+                },
+                {
+                  name: "email",
+                  num: "02",
+                  label: "What's your email?",
+                  type: "email",
+                  placeholder: "john@example.com",
+                },
+                {
+                  name: "phone",
+                  num: "03",
+                  label: "WhatsApp / phone?",
+                  type: "tel",
+                  placeholder: "+92 300 0000000",
+                },
+              ].map((field) => {
+                const filled = !!formData[field.name]?.trim();
+                const active = focused === field.name;
+                return (
+                  <div
+                    key={field.name}
+                    className="group relative grid grid-cols-[44px_1fr] md:grid-cols-[80px_1fr] 3xl:grid-cols-[120px_1fr] items-start gap-2 border-t border-white/10 py-6 md:py-8 3xl:py-10"
+                  >
+                    <span
+                      className={`font-mono text-xs md:text-sm lg:text-xl 3sxl:text-2xl 3xl:text-3xl pt-2 transition-colors duration-300 ${
+                        filled || active ? "text-green-400" : "text-zinc-600"
+                      }`}
                     >
-                      <label className="text-zinc-400 text-sm 3xl:text-lg font-medium">
+                      {filled && !active ? "✓" : field.num}
+                    </span>
+
+                    <div className="flex flex-col gap-2">
+                      <label
+                        htmlFor={field.name}
+                        className="text-white font-mono text-[11px] md:text-xs lg:text-sm 3sxl:text-lg 3xl:text-xl tracking-[0.15em] uppercase"
+                      >
                         {field.label}
                       </label>
-                      <input
-                        type={field.type}
-                        name={field.name}
-                        value={formData[field.name]}
-                        onChange={handleChange}
-                        onFocus={() => setFocused(field.name)}
-                        onBlur={() => setFocused("")}
-                        placeholder={field.placeholder}
-                        required
-                        className={`bg-white/5 border rounded-xl px-4 py-3.5 text-white text-sm 3xl:text-lg placeholder-zinc-600 outline-none transition-all duration-300
-                            ${
-                              focused === field.name
-                                ? "border-green-500/60 bg-[#4CAF4F]/5 shadow-[0_0_0_3px_rgba(76,175,79,0.1)]"
-                                : "border-white/10 hover:border-white/20"
-                            }`}
-                      />
+
+                      <div className="relative">
+                        <input
+                          id={field.name}
+                          type={field.type}
+                          name={field.name}
+                          value={formData[field.name]}
+                          onChange={handleChange}
+                          onFocus={() => setFocused(field.name)}
+                          onBlur={() => setFocused("")}
+                          placeholder={field.placeholder}
+                          required
+                          autoComplete="off"
+                          className="w-full bg-transparent text-white font-display text-[clamp(22px,3.2vw,40px)] 2xl:text-[48px] 3sxl:text-[56px] 3xl:text-[64px] placeholder-zinc-700 outline-none py-2"
+                        />
+                        {/* Animated focus line */}
+                        <span
+                          className={`absolute left-0 -bottom-[1px] h-px w-full bg-green-500 origin-left transition-transform duration-500 ease-out ${
+                            active ? "scale-x-100" : "scale-x-0"
+                          }`}
+                        />
+                      </div>
+
                       {errors[field.name] && (
-                        <p className="text-red-400 text-xs 3xl:text-base mt-1 flex items-center gap-1">
+                        <p className="text-red-400 text-xs lg:text-sm 3xl:text-base flex items-center gap-1">
                           <span>⚠</span> {errors[field.name]}
                         </p>
                       )}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                );
+              })}
 
-                {/* Message */}
-                <div className="flex flex-col gap-2 overflow-hidden scrollbar-none rounded-xl">
-                  <label className="text-zinc-400 text-sm 3xl:text-lg font-medium">
-                    Project Details
+              {/* Message row */}
+              <div className="relative grid grid-cols-[44px_1fr] md:grid-cols-[80px_1fr] 3xl:grid-cols-[120px_1fr] items-start gap-2 border-t border-white/10 py-6 md:py-8 3xl:py-10">
+                <span
+                  className={`font-mono text-xs md:text-sm lg:text-xl 3sxl:text-2xl 3xl:text-3xl pt-2 transition-colors duration-300 ${
+                    formData.message?.trim() || focused === "message"
+                      ? "text-green-400"
+                      : "text-zinc-600"
+                  }`}
+                >
+                  {formData.message?.trim() && focused !== "message"
+                    ? "✓"
+                    : "04"}
+                </span>
+
+                <div className="flex flex-col gap-2">
+                  <label
+                    htmlFor="message"
+                    className="text-white font-mono text-[11px] md:text-xs lg:text-sm 3sxl:text-lg 3xl:text-xl tracking-[0.15em] uppercase"
+                  >
+                    Tell me about your project
                   </label>
 
-                  <div
-                    className={`bg-white/5  rounded-xl   border  w-full overflow-hidden 
-                    
-                     ${
-                       focused === "message"
-                         ? "border-green-500/60 bg-green-500/5 shadow-[0_0_0_3px_rgba(76,175,79,0.1)]"
-                         : "border-white/10 hover:border-white/20"
-                     }`}
-                  >
+                  <div className="relative">
                     <textarea
+                      id="message"
                       name="message"
                       data-lenis-prevent
                       value={formData.message}
                       onChange={handleChange}
                       onFocus={() => setFocused("message")}
                       onBlur={() => setFocused("")}
-                      placeholder="Tell us about your project, goals, timeline..."
+                      placeholder="Goals, timeline, budget, anything that helps..."
                       required
-                      rows={5}
-                      className={`  custom-scrollbar w-full   px-4 py-3.5 text-white text-sm 3xl:text-lg  placeholder-zinc-600 outline-none transition-all duration-300 resize-none
-                        `}
+                      rows={3}
+                      className="custom-scrollbar w-full bg-transparent text-white font-display text-[clamp(20px,2.6vw,32px)] 2xl:text-[38px] 3sxl:text-[44px] 3xl:text-[52px] placeholder-zinc-700 outline-none resize-none py-2 leading-snug"
                     />
-                    {errors.message && (
-                      <p className="text-red-400 text-xs 2xl:text-[14px] 3xl:text-base mt-1 flex items-center gap-1">
-                        <span>⚠</span> {errors.message}
-                      </p>
-                    )}
+                    <span
+                      className={`absolute left-0 -bottom-[1px] h-px w-full bg-green-500 origin-left transition-transform duration-500 ease-out ${
+                        focused === "message" ? "scale-x-100" : "scale-x-0"
+                      }`}
+                    />
                   </div>
-                </div>
 
-                {/* Submit */}
+                  {errors.message && (
+                    <p className="text-red-400 text-xs 2xl:text-sm 3xl:text-base flex items-center gap-1">
+                      <span>⚠</span> {errors.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Submit row */}
+              <div className="flex items-center justify-between gap-6 border-t border-white/10 pt-8 3xl:pt-10">
+                <p className="text-zinc-500 text-sm 2xl:text-base 3xl:text-xl max-w-[220px] md:max-w-xs 3xl:max-w-md leading-relaxed">
+                  No spam, ever. I usually reply{" "}
+                  <span className="text-white">within 24 hours.</span>
+                </p>
+
+                {/* <motion.button
+                  type="submit"
+                  disabled={loading}
+                  whileTap={{ scale: 0.95 }}
+                  data-cursor="pointer"
+                  className="group relative flex-shrink-0 w-28 h-28 md:w-36 md:h-36 2xl:w-44 2xl:h-44 3xl:w-56 3xl:h-56 rounded-full border border-white/20 text-white flex flex-col items-center justify-center gap-2 overflow-hidden transition-all duration-500 hover:border-green-500 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
+                > */}
                 <motion.button
                   type="submit"
-                  // whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
                   disabled={loading}
-                  className="mt-2 w-full 3xl:text-2xl bg-green-500 hover:bg-green-600 disabled:opacity-70 disabled:cursor-not-allowed text-white   font-semibold py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer border-none shadow-[0_4px_20px_rgba(76,175,79,0.3)] hover:shadow-[0_6px_30px_rgba(76,175,79,0.45)]"
+                  whileTap={{ scale: 0.95 }}
+                  data-cursor="pointer"
+                  className="group relative flex-shrink-0 w-28 h-28 md:w-36 md:h-36 2xl:w-44 2xl:h-44 3xl:w-56 3xl:h-56 rounded-full border border-white/20 text-white flex flex-col items-center justify-center gap-2 transition-colors duration-500 hover:border-green-500 disabled:opacity-70 disabled:cursor-not-allowed cursor-pointer"
                 >
-                  {loading ? (
-                    <>
-                      <svg
-                        className="animate-spin w-5 h-5"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="white"
-                          strokeWidth="4"
+                  {/* Fill on hover */}
+                  {/* <span className="absolute inset-0 bg-green-500 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out" /> */}
+                  <span className="absolute -inset-px rounded-full bg-green-500 [clip-path:circle(0%_at_50%_50%)] group-hover:[clip-path:circle(71%_at_50%_50%)] transition-[clip-path] duration-500 ease-out" />
+                  <span className="relative z-10 flex flex-col items-center gap-2">
+                    {loading ? (
+                      <>
+                        <svg
+                          className="animate-spin w-5 h-5 3xl:w-8 3xl:h-8"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="white"
+                            strokeWidth="4"
+                          />
+                          <path
+                            className="opacity-75"
+                            fill="white"
+                            d="M4 12a8 8 0 018-8v8z"
+                          />
+                        </svg>
+                        <span className="font-mono text-[11px] lg:text-lg 3sxl:text-lg 3xl:text-xl tracking-widest uppercase">
+                          Sending
+                        </span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="font-mono text-[11px] md:text-xs lg:text-lg 2xl:text-xl  3xl:text-2xl  tracking-widest uppercase">
+                          Send
+                        </span>
+                        <FaArrowRight
+                          size={20}
+                          className="-rotate-45 transition-transform duration-500 group-hover:rotate-0 3xl:w-8 3xl:h-8"
                         />
-                        <path
-                          className="opacity-75"
-                          fill="white"
-                          d="M4 12a8 8 0 018-8v8z"
-                        />
-                      </svg>
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      Send Message{" "}
-                      <FaArrowRight size={18} className="3xl:w-7 3xl:h-7" />
-                    </>
-                  )}
+                      </>
+                    )}
+                  </span>
                 </motion.button>
-              </form>
-            )}
-          </div>
+              </div>
+            </form>
+          )}
         </motion.div>
 
         {/* Primary CTA — big email */}
@@ -476,7 +543,7 @@ export default function Contact({ id }) {
           whileInView="show"
           viewport={{ once: true }}
           custom={5}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 2xl:gap-5 3xl:gap-6 mb-16 2xl:mb-20 3xl:mb-24"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 2xl:gap-5 3xl:gap-6 mb-4 2xl:mb-8 3xl:mb-10"
         >
           {socials.map((social, i) => (
             <motion.a
@@ -517,3 +584,186 @@ export default function Contact({ id }) {
     </section>
   );
 }
+
+//  <motion.div
+//           initial={{ opacity: 0, x: 40 }}
+//           whileInView={{ opacity: 1, x: 0 }}
+//           viewport={{ once: true }}
+//           transition={{ duration: 0.7 }}
+//           className="lg:col-span-3"
+//         >
+//           <div className="mb-12 2xl:mb-16 3xl:mb-20 max-w-2xl 2xl:max-w-3xl 3sxl:max-w-4xl 3xl:max-w-7xl mx-auto  rounded-[32px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 md:p-10 shadow-[0_25px_80px_rgba(0,0,0,.45)]">
+//             {submitted ? (
+//               /* Success state */
+//               <motion.div
+//                 initial={{ opacity: 0, scale: 0.9 }}
+//                 animate={{ opacity: 1, scale: 1 }}
+//                 transition={{ duration: 0.5 }}
+//                 className="flex flex-col items-center justify-center text-center py-16 gap-6"
+//               >
+//                 <div className="w-20 h-20 3xl:w-24 3xl:h-24 rounded-full bg-[#4CAF4F]/20 border border-[#4CAF4F]/40 flex items-center justify-center text-4xl">
+//                   ✓
+//                 </div>
+//                 <h3 className="text-white text-2xl 3xl:text-4xl font-bold">
+//                   Message Sent!
+//                 </h3>
+//                 <p className="text-zinc-400 max-w-sm 3xl:text-lg 3xl:max-w-md leading-7">
+//                   Thanks for reaching out. I'll review your project and get back
+//                   to you within 24 hours.
+//                 </p>
+//                 <button
+//                   onClick={() => {
+//                     setSubmitted(false);
+//                     setFormData({
+//                       name: "",
+//                       email: "",
+//                       service: "",
+//                       budget: "",
+//                       message: "",
+//                     });
+//                   }}
+//                   className="mt-2 text-[#4CAF4F] border border-[#4CAF4F]/40 hover:bg-[#4CAF4F]/10 px-6 py-3 3xl:text-2xl rounded-xl font-medium transition-all duration-300 cursor-pointer"
+//                 >
+//                   Send Another
+//                 </button>
+//               </motion.div>
+//             ) : (
+//               <form
+//                 // ref={formRef}
+//                 onSubmit={handleSubmit}
+//                 className="flex flex-col gap-5"
+//               >
+//                 {/* Name + Email row */}
+//                 <div className="grid sm:grid-cols-2 gap-5">
+//                   {[
+//                     {
+//                       name: "name",
+//                       label: "Your Name",
+//                       type: "text",
+//                       placeholder: "John Doe",
+//                     },
+//                     {
+//                       name: "email",
+//                       label: "Your Email",
+//                       type: "email",
+//                       placeholder: "john@example.com",
+//                     },
+//                     {
+//                       name: "phone",
+//                       label: "Phone / WhatsApp",
+//                       type: "tel",
+//                       placeholder: "+92 300 0000000",
+//                       fullWidth: true,
+//                     },
+//                   ].map((field) => (
+//                     <div
+//                       key={field.name}
+//                       // className="flex flex-col gap-2"
+//                       className={`flex flex-col gap-2 ${field.fullWidth ? "sm:col-span-2" : ""}`}
+//                     >
+//                       <label className="text-zinc-400 text-sm 3xl:text-lg font-medium">
+//                         {field.label}
+//                       </label>
+//                       <input
+//                         type={field.type}
+//                         name={field.name}
+//                         value={formData[field.name]}
+//                         onChange={handleChange}
+//                         onFocus={() => setFocused(field.name)}
+//                         onBlur={() => setFocused("")}
+//                         placeholder={field.placeholder}
+//                         required
+//                         className={`bg-white/5 border rounded-xl px-4 py-3.5 text-white text-sm 3xl:text-lg placeholder-zinc-600 outline-none transition-all duration-300
+//                             ${
+//                               focused === field.name
+//                                 ? "border-green-500/60 bg-[#4CAF4F]/5 shadow-[0_0_0_3px_rgba(76,175,79,0.1)]"
+//                                 : "border-white/10 hover:border-white/20"
+//                             }`}
+//                       />
+//                       {errors[field.name] && (
+//                         <p className="text-red-400 text-xs 3xl:text-base mt-1 flex items-center gap-1">
+//                           <span>⚠</span> {errors[field.name]}
+//                         </p>
+//                       )}
+//                     </div>
+//                   ))}
+//                 </div>
+
+//                 {/* Message */}
+//                 <div className="flex flex-col gap-2 overflow-hidden scrollbar-none rounded-xl">
+//                   <label className="text-zinc-400 text-sm 3xl:text-lg font-medium">
+//                     Project Details
+//                   </label>
+
+//                   <div
+//                     className={`bg-white/5  rounded-xl   border  w-full overflow-hidden
+
+//                      ${
+//                        focused === "message"
+//                          ? "border-green-500/60 bg-green-500/5 shadow-[0_0_0_3px_rgba(76,175,79,0.1)]"
+//                          : "border-white/10 hover:border-white/20"
+//                      }`}
+//                   >
+//                     <textarea
+//                       name="message"
+//                       data-lenis-prevent
+//                       value={formData.message}
+//                       onChange={handleChange}
+//                       onFocus={() => setFocused("message")}
+//                       onBlur={() => setFocused("")}
+//                       placeholder="Tell us about your project, goals, timeline..."
+//                       required
+//                       rows={5}
+//                       className={`  custom-scrollbar w-full   px-4 py-3.5 text-white text-sm 3xl:text-lg  placeholder-zinc-600 outline-none transition-all duration-300 resize-none
+//                         `}
+//                     />
+//                     {errors.message && (
+//                       <p className="text-red-400 text-xs 2xl:text-[14px] 3xl:text-base mt-1 flex items-center gap-1">
+//                         <span>⚠</span> {errors.message}
+//                       </p>
+//                     )}
+//                   </div>
+//                 </div>
+
+//                 {/* Submit */}
+//                 <motion.button
+//                   type="submit"
+//                   // whileHover={{ scale: 1.02 }}
+//                   whileTap={{ scale: 0.98 }}
+//                   disabled={loading}
+//                   className="mt-2 w-full 3xl:text-2xl bg-green-500 hover:bg-green-600 disabled:opacity-70 disabled:cursor-not-allowed text-white   font-semibold py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 cursor-pointer border-none shadow-[0_4px_20px_rgba(76,175,79,0.3)] hover:shadow-[0_6px_30px_rgba(76,175,79,0.45)]"
+//                 >
+//                   {loading ? (
+//                     <>
+//                       <svg
+//                         className="animate-spin w-5 h-5"
+//                         viewBox="0 0 24 24"
+//                         fill="none"
+//                       >
+//                         <circle
+//                           className="opacity-25"
+//                           cx="12"
+//                           cy="12"
+//                           r="10"
+//                           stroke="white"
+//                           strokeWidth="4"
+//                         />
+//                         <path
+//                           className="opacity-75"
+//                           fill="white"
+//                           d="M4 12a8 8 0 018-8v8z"
+//                         />
+//                       </svg>
+//                       Sending...
+//                     </>
+//                   ) : (
+//                     <>
+//                       Send Message{" "}
+//                       <FaArrowRight size={18} className="3xl:w-7 3xl:h-7" />
+//                     </>
+//                   )}
+//                 </motion.button>
+//               </form>
+//             )}
+//           </div>
+//         </motion.div>

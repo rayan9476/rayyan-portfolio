@@ -1,11 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { fadeUp } from "../../lib/motion";
 import SectionLabel from "../ui/SectionLabel";
@@ -14,29 +9,47 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
-    id: "nexlify",
+    id: "havenly",
     num: "01",
-    title: "Nexlify",
-    subtitle: "Creative Agency Landing Page",
-    desc: "A modern, high-performance agency landing page template built to sell. Features GSAP stair transitions, Framer Motion layoutId modals, custom cursor, smooth scroll, and a working Google Sheets contact form.",
-    video:
-      "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785745159/Lv_0_20260730161935.Mp4_2_2_wf6nvw.mp4",
+    title: "Havenly",
+    subtitlelarger: "Real Estate Website with AI Chatbot",
+    subtitlesmaller: "Real Estate Website ",
+    desc: "A full real estate website, designed and built from scratch by me. Features property search with city and filter options, Framer Motion page loader and animations, GSAP scroll animations, Lenis smooth scroll, and a fully responsive layout for mobile and desktop. Includes a custom AI chatbot built with the Gemini API that answers visitor questions and captures leads into Google Sheets. When the AI can't respond, a WhatsApp button lets visitors contact the agent directly.",
+    video: "",
     videoThumbnail:
-      "https://res.cloudinary.com/md0sncix/image/upload/w_1200,q_auto,f_auto/v1785747382/Screenshot_2026-08-03_131529_a8zhkm.png",
-    tags: ["React", "GSAP", "Framer Motion", "Tailwind", "Lenis"],
-    color: "#8B5CF6",
-    glow: "rgba(139,92,246,0.1)",
-    live: "https://nexlify-bice.vercel.app/",
+      "https://res.cloudinary.com/dd0fyuait/image/upload/w_1200,q_auto,f_auto/v1793962772/Screenshot_2026-11-03_134732_ytdyx9.png",
+    tags: ["React", "Framer Motion", "GSAP", "Lenis", "Gemini API", "Tailwind"],
+    color: "#E8562A",
+    glow: "rgba(245,158,11,0.1)",
+    live: "https://havenly-delta.vercel.app/",
     github: "https://github.com/rayan9476",
     align: "left",
   },
 
   {
-    id: "k72",
+    id: "whatisthecode",
     num: "02",
-    title: "K72 Agency",
-    subtitle: "Creative Agency Portfolio",
-    desc: "A visually rich portfolio site for a creative agency featuring GSAP ScrollTrigger animations, Lenis smooth scroll, Swiper carousels, ImageKit CDN, and performance optimizations including React Compiler.",
+    title: "whatisthecode",
+    subtitle: "Creative Digital Agency Website",
+    desc: "The website for my own creative digital agency, designed and built from scratch by me. Features a custom service page structure for web development, UI/UX and SEO, a lime page-loader transition, a custom cursor with hover labels, SEO-focused metadata and a fully responsive layout for mobile and desktop.",
+    video: "",
+    videoThumbnail:
+      "https://res.cloudinary.com/dd0fyuait/image/upload/w_1200,q_auto,f_auto/v1793963154/whatisthecode-site-gig-1280x769_pepqr1.png",
+    tags: ["Next.js", "React", "Tailwind CSS", "GSAP", "Framer Motion", "SEO"],
+    color: "#A3E635",
+    glow: "rgba(163,230,53,0.1)",
+    live: "https://whatisthecode.vercel.app/",
+    github: "https://github.com/rayan9476",
+    align: "right",
+  },
+
+  {
+    id: "k72",
+    num: "03",
+    title: "K72 Agency Recreation",
+    subtitlelarger: "Creative Agency Portfolio · Recreation",
+    subtitlesmaller: "Creative Agency Portfolio",
+    desc: "A recreation of the K72 creative agency website, built from scratch as a personal project (not affiliated with K72). Features GSAP ScrollTrigger animations, Lenis smooth scroll, Swiper carousels, ImageKit CDN, and performance optimizations including React Compiler.",
     video:
       "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785492662/Lv_0_20260730184745.Mp4_2_1_c9gps1.mp4",
 
@@ -47,6 +60,25 @@ const projects = [
     color: "#22C55E",
     glow: "rgba(34,197,94,0.1)",
     live: "https://k72-agency-dusky.vercel.app/",
+    github: "https://github.com/rayan9476",
+    align: "left",
+  },
+
+  {
+    id: "nexlify",
+    num: "04",
+    title: "Nexlify",
+    subtitlelarger: "Creative Agency Landing Page",
+    subtitlesmaller: "Creative Agency Landing Page",
+    desc: "An original landing page for a creative agency, designed and built from scratch by me. Features GSAP stair transitions, Framer Motion layoutId modals, a custom cursor, Lenis smooth scroll, and a working Google Sheets contact form.",
+    video:
+      "https://res.cloudinary.com/md0sncix/video/upload/w_1200,q_auto,f_auto/v1785745159/Lv_0_20260730161935.Mp4_2_2_wf6nvw.mp4",
+    videoThumbnail:
+      "https://res.cloudinary.com/md0sncix/image/upload/w_1200,q_auto,f_auto/v1785747382/Screenshot_2026-08-03_131529_a8zhkm.png",
+    tags: ["React", "GSAP", "Framer Motion", "Tailwind", "Lenis"],
+    color: "#8B5CF6",
+    glow: "rgba(139,92,246,0.1)",
+    live: "https://nexlify-bice.vercel.app/",
     github: "https://github.com/rayan9476",
     align: "right",
   },
@@ -169,8 +201,12 @@ function ProjectCard({ project, index }) {
             {project.num}
           </span>
           <div className="w-8 2xl:w-10 3sxl:w-12 3xl:w-14 h-px bg-zinc-800" />
-          <span className="min-w-0 truncate  xs-xs-text  text-[11px] lg:text-base 2xl:text-lg 3sxl:text-xl 3xl:text-2xl font-mono tracking-[0.2em] text-zinc-600 uppercase">
-            {project.subtitle}
+          <span className="hidden md:block  min-w-0 truncate  xs-xs-text  text-[11px] lg:text-base 2xl:text-lg 3sxl:text-xl 3xl:text-2xl font-mono tracking-[0.2em] text-zinc-600 uppercase">
+            {project.subtitlelarger}
+          </span>
+
+          <span className=" md:hidden  min-w-0 truncate  xs-xs-text  text-[11px] lg:text-base 2xl:text-lg 3sxl:text-xl 3xl:text-2xl font-mono tracking-[0.2em] text-zinc-600 uppercase">
+            {project.subtitlesmaller}
           </span>
         </div>
 
@@ -259,7 +295,7 @@ export default function Projects({ id }) {
   return (
     <section
       id={id}
-      className="relative py-32 lg:py-40 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
+      className="relative py-24 px-5 md:px-10 lg:px-16 xl:px-24  overflow-hidden"
     >
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
 
